@@ -1,0 +1,24 @@
+{
+  "name": "adote-um-pet",
+  "version": "1.0.0",
+  "description": "Projeto Next.js para adoção de pets",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "keywords": [
+    "nextjs",
+    "adoção",
+    "pets"
+  ],
+  "author": "Seu Nome",
+  "license": "MIT",
+  "dependencies": {
+    "next": "14.2.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {}
+}

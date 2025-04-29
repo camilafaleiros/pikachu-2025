@@ -1,0 +1,11 @@
+# Ignorar dependências
+node_modules/
+
+# Ignorar arquivos de build do Next.js
+.next/
+
+# Ignorar variáveis de ambiente
+.env*
+
+# Ignorar arquivos de log
+*.log
