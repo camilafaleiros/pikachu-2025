@@ -1,4 +1,5 @@
-import { useState } from 'react';
+'use client';
+import React, { useState } from 'react';
 import Header from '../components/Header';
 import { useRouter } from 'next/router';
 
@@ -14,8 +15,18 @@ export default function Contato() {
   return (
     <main>
       <Header />
-      <div className="content">
-        <button className="back-button" onClick={() => router.back()}>← Voltar</button>
+
+      <section className="content">
+
+        <header className="content-header">
+          <button
+            className="back-button"
+            onClick={() => router.back()}
+          >
+            ← Voltar
+          </button>
+        </header>
+
         <div className="contato-container">
           <h2 className="section-title">Fale Conosco</h2>
           {!enviado ? (
@@ -23,13 +34,15 @@ export default function Contato() {
               <input type="text" placeholder="Seu nome" required />
               <input type="email" placeholder="Seu email" required />
               <textarea placeholder="Sua mensagem" required></textarea>
-              <button type="submit" className="submit-button">Enviar</button>
+              <button type="submit" className="submit-button">
+                Enviar
+              </button>
             </form>
           ) : (
             <p>Mensagem enviada com sucesso! 📨</p>
           )}
         </div>
-      </div>
+      </section>
     </main>
   );
 }

@@ -1,24 +1,35 @@
+'use client';
+import React, { useEffect, useState } from 'react';
 import Header from '../components/Header';
 import PetCard from '../components/PetCard';
+import { fetchPets } from '../services/petfinder';
 
 export default function Home() {
-  const fakePets = [
-    { id: 1, name: 'Bidu', species: 'Cachorro', photo: '/pet1.jpg' },
-    { id: 2, name: 'Mimi', species: 'Gato', photo: '/pet2.jpg' },
-    { id: 3, name: 'Luna', species: 'Coelho', photo: '/pet3.jpg' },
-  ];
+  const [pets, setPets] = useState([]);
+
+  useEffect(() => {
+    const getPets = async () => {
+      const data = await fetchPets();
+      setPets(data);
+    };
+    getPets();
+  }, []);
 
   return (
     <main>
       <Header />
-      <div className="content">
-        <h2 className="section-title">Pets disponíveis</h2>
+      
+      <section className="content">
+        <header className="content-header">
+          <h2 className="section-title">Pets Disponíveis para Adoção</h2>
+        </header>
+
         <div className="pet-grid">
-          {fakePets.map((pet) => (
+          {pets.map(pet => (
             <PetCard key={pet.id} pet={pet} />
           ))}
         </div>
-      </div>
+      </section>
     </main>
   );
 }
