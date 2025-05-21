@@ -34,7 +34,6 @@ export default function PetPage() {
           </button>
         </header>
 
-        {/* mantemos um wrapper semântico para os detalhes */}
         <div className="pet-detail">
           <img src={pet.photo} alt={pet.name} />
           <h2>{pet.name}</h2>
